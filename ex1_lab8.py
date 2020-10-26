@@ -2,4 +2,4 @@
 #     for i in iterable:
 #         print(function(i))
 
-map(print, map(function(i), iterable))
+map(print, map(function, iterable))
