@@ -25,7 +25,7 @@ if __name__ == '__main__':
         arr.append(a)
         N -= 1
     print(*arr)
-    threads = [threading.Thread(target=thread_job(i)) for i in arr]
+    threads = [threading.Thread(target=thread_job(arr[i])) for i in range(len(arr))]
     for thread in threads:
         thread.start()
     for thread in threads:
