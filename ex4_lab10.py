@@ -18,7 +18,7 @@ if __name__ == '__main__':
         'https://habrahabr.ru', 'https://www.python.org',
         'https://isocpp.org',
     ]
-    threads = [threading.Thread(target=thread_job(url)) for url in urls]
+    threads = [threading.Thread(target=thread_job(urls[i])) for i in range(len(urls))]
     for thread in threads:
         thread.start()
     for thread in threads:
