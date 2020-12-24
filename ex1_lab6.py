@@ -9,35 +9,28 @@ class Complex:
     def __add__(self, other):
         v = self.a+other.a
         w = self.b+other.b
-        if w < 0:
-            return '(' + str(v) + str(w) + 'j' + ')'
-        else:
-            return '(' + str(v) + "+" + str(w) + 'j' + ')'
+        return Complex(v, w)
 
     def __sub__(self, other):
         v = self.a - other.a
         w = self.b - other.b
-        if w < 0:
-            return '(' + str(v) + str(w) + 'j' + ')'
-        else:
-            return '(' + str(v) + "+" + str(w) + 'j' + ')'
+        return Complex(v, w)
 
     def __mul__(self, other):
         v = self.a*other.a - self.b*other.b
         w = self.b*other.a + self.a*other.b
-        if w < 0:
-            return '(' + str(v) + str(w) + 'j' + ')'
-        else:
-            return '(' + str(v) + "+" + str(w) + 'j' + ')'
+        return Complex(v, w)
 
     def __truediv__(self, other):
         v = (self.a*other.a + self.b*other.b)/(other.a*other.a + other.b*other.b)
         w = (self.b*other.a - self.a*other.b)/(other.a*other.a + other.b*other.b)
-        if w < 0:
-            return '(' + str(v) + str(w) + 'j' + ')'
-        else:
-            return '(' + str(v) + "+" + str(w) + 'j' + ')'
+        return Complex(v, w)
 
+    def __str__(self):
+        if b < 0:
+            return '(' + str(a) + str(b) + 'j' + ')'
+        else:
+            return '(' + str(a) + "+" + str(b) + 'j' + ')'
 
 
 a, b = map(int, input().split())

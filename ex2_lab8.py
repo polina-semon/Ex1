@@ -1,4 +1,5 @@
-def fib(a, b, n):
+def fib(n):
+    a = b = 1
     _current = a
     for i in range(n):
         _next = _current + b
@@ -8,4 +9,4 @@ def fib(a, b, n):
 
 
 n = int(input())
-print(1, 1, *list(fib(1, 1, n)))
+print(1, 1, *list(fib(n)))

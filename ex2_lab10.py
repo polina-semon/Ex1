@@ -7,9 +7,10 @@ import time
 import threading
 
 
-def thread_job(suffix):
-    ip = "192.168.178." + str(suffix)
+def thread_job(i):
+    ip = "192.168.178." + str(i)
     ping_out = os.popen("ping -q -c2 " + ip, "r")  # получение вердикта
+    print("I'm" + str(i) + "thread")
     print("... pinging ", ip)
     while True:
         line = ping_out.readline()
@@ -20,11 +21,12 @@ def thread_job(suffix):
             print(ip + ": " + status[int(n_received[0])])
 
 
+
 start = time.time()
 received_packages = re.compile(r"(\d) received")
 status = ("no response", "alive but losses", "alive")
 
-threads = [threading.Thread(target=thread_job(suffix)) for suffix in range(20, 30)]
+threads = [threading.Thread(target=thread_job(i)) for i in range(20, 30)]
 for thread in threads:
     thread.start()
 for thread in threads:
