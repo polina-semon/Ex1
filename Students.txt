@@ -1,0 +1,15 @@
+Student: Ivanov Ivan
+Course: 2
+Group: 921
+Headmen: yes
+Subjects: Math ICT Physics
+Grades: 5 6 8
+Elective courses: Python CMM
+
+Student: Petrov Petr
+Course: 1
+Group: 913
+Headmen: yes
+Subjects: Math ICT Physics
+Grades: 5 7 4
+Elective courses: no
